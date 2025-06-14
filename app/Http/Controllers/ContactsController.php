@@ -192,6 +192,7 @@ class ContactsController extends Controller
         $item = $contact->findOrFail($id);
 
         if($item){
+            $item->delete(); // sets deleted_at timestamp instead of deleting the row
             $message = ['status' => 'bg-success', 'text' => 'Contact deleted with success.'];
         }
 
