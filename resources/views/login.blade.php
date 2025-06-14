@@ -30,12 +30,14 @@
       <label for="login_password">Password</label>
     </div>
 
+    {{--
     <div class="form-check text-start my-3">
       <input class="form-check-input" type="checkbox" name="remember_me" value="remember-me" id="login_remember">
       <label class="form-check-label" for="login_remember">
-        Remember me
+        Remember me <small>(not working because i am laisy on weekends)</small>
       </label>
     </div>
+    --}}
 
     @csrf
     <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>

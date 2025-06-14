@@ -36,7 +36,7 @@ class LoginController extends Controller
 
             $request->session()->put('id_user', Auth::id());
 
-            return redirect('/')->with('message', ['status' => 'bg-success', 'text' => 'Success.']);
+            return redirect('/')->with('message', ['status' => 'bg-success', 'text' => 'You have logged in successfully.']);
 
         }
 

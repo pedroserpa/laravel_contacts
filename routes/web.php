@@ -27,9 +27,8 @@ Route::get('/register', [UserController::class, 'index'])->name('app_register');
 Route::post('/register', [UserController::class, 'register'])->name('app_register_process');
 
 //Auth routes
-Route::get('/new', [ContactsController::class, 'create'])->name('app_contact_create');
-Route::post('/new', [ContactsController::class, 'store'])->name('app_contact_store');
-Route::get('/edit/{id}', [ContactsController::class, 'edit'])->name('app_contact_edit');
-Route::put('/edit/{id}', [ContactsController::class, 'update'])->name('app_contact_update');
-
-Route::get('/delete/{id}', [ContactsController::class, 'destroy'])->name('app_contact_delete');
+Route::get('/new', [ContactsController::class, 'create'])->name('app_contact_create')->middleware('auth:sanctum');
+Route::post('/new', [ContactsController::class, 'store'])->name('app_contact_store')->middleware('auth:sanctum');
+Route::get('/edit/{id}', [ContactsController::class, 'edit'])->name('app_contact_edit')->middleware('auth:sanctum');
+Route::put('/edit/{id}', [ContactsController::class, 'update'])->name('app_contact_update')->middleware('auth:sanctum');
+Route::get('/delete/{id}', [ContactsController::class, 'destroy'])->name('app_contact_delete')->middleware('auth:sanctum');

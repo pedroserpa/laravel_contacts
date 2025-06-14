@@ -29,6 +29,9 @@
       @if(session('message'))
         <div class="row"><div class="col-12"><h1 class="h3 mb-3 fw-normal {{ session('message')['status'] }}">{{ session('message')['text'] }}</h1></div></div>
       @endif
+      @auth
+        <div class="row mb-3"><div class="col-12"><a href="{{ route('app_contact_create') }}" class="btn btn-primary">Add New</a></div></div>
+      @endauth
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <?php if (null != $contacts): ?>
         <?php foreach ($contacts as $contact): ?>
