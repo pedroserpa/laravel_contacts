@@ -22,15 +22,15 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="{{ url('/') }}" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="{{ url('/') }}" class="nav-link {{ (Route::currentRouteName() === 'app_home') ? 'active' : '' }}" aria-current="page">Home</a></li>
                 @guest
-                    <li class="nav-item"><a href="{{ route('app_login') }}" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="{{ route('app_login') }}" class="nav-link  {{ (Route::currentRouteName() === 'app_login') ? 'active' : '' }}">Login</a></li>
                 @endguest
-                <li class="nav-item"><a href="{{ route('app_register') }}" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="{{ route('app_register') }}" class="nav-link  {{ (Route::currentRouteName() === 'app_register') ? 'active' : '' }}">Register</a></li>
 
                 @auth
                     <li class="nav-item"><a href="{{ route('app_logout') }}" class="nav-link">Logout</a></li>
-                    <li class="nav-item"><a href="{{ route('app_contact_create') }}" class="nav-link">Add Contact</a></li>
+                    <li class="nav-item"><a href="{{ route('app_contact_create') }}" class="nav-link  {{ (Route::currentRouteName() === 'app_contact_create') ? 'active' : '' }}">Add Contact</a></li>
                 @endauth
             </ul>
             </header>
