@@ -15,7 +15,7 @@
                     <div class="card-header"><h2 class="card-title">{{ $contact['name'] }}</h2></div>
                     <div class="card-body">
                         <p><a href="mailto:{{ $contact['email'] }}" target="_blank">{{ $contact['email'] }}</a></p>
-                        <p>{{ $contact['tel'] }}</p>
+                        <p>{{ $contact['telephone'] }}</p>
                         
                     </div>
                     @auth
